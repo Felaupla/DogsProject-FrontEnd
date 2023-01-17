@@ -1,0 +1,37 @@
+.paging {
+  display: inline-block;
+  padding: 0;
+  margin: 0;
+  font-size: medium;
+}
+.paging li {
+  display: inline;
+}
+
+.paging li button {
+  float: center;
+  height: 3em;
+  width: 4em;
+  padding: 8px 18px;
+  border-radius: 8px;
+  background-color: #8db6dc;
+  border: transparent;
+  margin: 3px;
+  margin-bottom: 3em;
+}
+
+.paging li button:hover {
+  background-color: #8db6dc;
+  color: black;
+  transform: scale(1.15);
+}
+
+.paging li button:active {
+  background-color: #8db6dc;
+  box-shadow: 0 1px #666;
+  transform: translateY(1px);
+}
+
+.paging li button:focus {
+  background-color: #8db6dc;
+}

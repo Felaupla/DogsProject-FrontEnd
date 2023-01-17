@@ -1,0 +1,87 @@
+body {
+  background-image: url('../images/dog-background.png');
+  background-repeat: no-repeat;
+  object-fit: fill;
+}
+  .titleLanding {
+    background-color: transparent;
+    font-size: 100px;
+    font-style: italic;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  }
+    .button {
+        border-radius: 15px;
+        background-color: #8db6dc;
+        border: none;
+        color: black;
+        text-align: center;
+        font-size: 24px;
+        padding: 20px;
+        width: 350px;
+        transition: all 0.5s;
+        cursor: pointer;
+        top:10%;
+        left: 38%;
+        align-items: center;
+      }
+      .button:hover {
+        transform: scale(1.1);
+      }
+      
+      .button span {
+        cursor: pointer;
+        position: relative;
+        transition: 0.5s;
+      }
+      
+      .button span:after {
+        content: '\00bb';
+        position: absolute;
+        opacity: 0;
+        top: 0;
+        right: -20px;
+        transition: 0.5s;
+      }
+      
+      .button:hover span {
+        padding-right: 25px;
+      }
+      
+      .button:hover span:after {
+        opacity: 1;
+        right: 0;
+      }
+
+      @media screen and (max-width: 574px) {
+        .titleLanding {
+          transform: scale(60%);
+        }
+        .button {
+          transform: scale(60%);
+          flex-direction: column;
+        }
+        .divLP {
+           object-fit: cover;
+           background-size: 60%;
+        }
+      }
+      @media screen and (max-width: 375px) {
+        body {
+          background-size: 40%;
+          object-fit: fill;
+          background-repeat: no-repeat;
+        }
+        .divLP {
+          object-fit: fill;
+
+       }
+        .titleLanding {
+          transform: scale(40%);
+        }
+        .button {
+          transform: scale(40%);
+        }
+        .details_component {
+          padding: 0 15px;
+        }
+      }
