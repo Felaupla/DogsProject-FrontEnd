@@ -77,7 +77,7 @@ export default function Detail(props) {
         <div className="loading">
           <h1>
             <strong>Searching Dog...</strong>
-            <img url="../images/loading.gif" alt="snif snif"></img>
+            <img src="../images/Loading_icon.gif" alt="Sorry"></img>
           </h1>
         </div>
       )}

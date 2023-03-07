@@ -1,10 +1,8 @@
-.divCreate {
-  position: absolute;
-  width: 100%;
-  background-image: url("../images/dog-background.png");
-  background-repeat: no-repeat;
+.formContainer {
+  display: flex;
   object-fit: fill;
-  background-attachment: fixed;
+  align-items: flex-start;
+  justify-content: space-around;
 }
 
 .buttonHome {
@@ -25,23 +23,21 @@
 .title {
   display: block;
   color: #4c5042;
-  justify-content: center;
-  padding-right: 105px;
+  justify-content: space-around;
 }
 
 label {
+  margin-left: 10px;
   color: #4c5042;
   font-size: medium;
-  margin: 10px;
+  width: 55%;
 }
 
 input {
-  display: inline-block;
-  margin-bottom: 10px;
   background-color: rgb(114, 120, 123);
   border-radius: 4px;
   border-color: transparent;
-  margin: 10px;
+  margin: 4px;
   color: azure;
 }
 input:hover {
@@ -106,4 +102,11 @@ select:hover {
   color: red;
   font-size: small;
   margin-top: 0;
+}
+
+.values {
+  margin: 1%;
+  display: flex;
+  align-items: center;
+  align-content: space-around;
 }

@@ -108,143 +108,137 @@ export default function DogCreate() {
     });
   }
   return (
-    <div className="divCreate">
+    <div>
       <Link to="/home">
         <button className="buttonHome">Home</button>
       </Link>
       <h1 className="title"> Create your own dog breed</h1>
-      <form onSubmit={(e) => handleSubmit(e)}>
-        <div>
-          <label>
-            <strong>Breed Name:</strong>
-          </label>
-          <input
-            type="text"
-            value={input.name}
-            name="name"
-            onChange={(e) => handleChange(e)}
-          />
-          {errors.name && (
-            <p className="error">
-              <strong>{errors.name}</strong>
-            </p>
-          )}
-        </div>
-        <div>
-          <label>
-            <strong>Height range: </strong>
-          </label>
-          <input
-            type="text"
-            value={input.height}
-            name="height"
-            onChange={(e) => handleChange(e)}
-          />
-          <label>
-            <strong> cm</strong>
-          </label>
-          {errors.height && (
-            <p className="error">
-              <strong>{errors.height}</strong>
-            </p>
-          )}
-        </div>
-        <div>
-          <label>
-            <strong>Weight range: </strong>
-          </label>
-          <input
-            type="text"
-            value={input.weight}
-            name="weight"
-            onChange={(e) => handleChange(e)}
-          />
-          <label>
-            <strong> kg</strong>
-          </label>
-          {errors.weight && (
-            <p className="error">
-              <strong>{errors.weight}</strong>
-            </p>
-          )}
-        </div>
-        <div>
-          <label>
-            <strong>Expected life span: </strong>
-          </label>
-          <input
-            type="text"
-            value={input.life_span}
-            name="life_span"
-            onChange={(e) => handleChange(e)}
-          />
-          <label>
-            <strong> years</strong>
-          </label>
-          {errors.life_span && (
-            <p className="error">
-              <strong>{errors.life_span}</strong>
-            </p>
-          )}
-        </div>
-        <div>
-          <label>
-            <strong>Image URL: </strong>
-          </label>
-          <input
-            type="url"
-            value={input.image}
-            name="image"
-            onChange={(e) => handleChange(e)}
-          />
-          {errors.image && (
-            <p className="error">
-              <strong>{errors.image}</strong>
-            </p>
-          )}
-        </div>
-        <div>
-          <select onChange={(e) => handleSelect(e)}>
-            <option value="selected" hidden>
-              Temperaments
-            </option>
-            {allTemperaments
-              ?.sort(function (a, b) {
-                if (a.name < b.name) return -1;
-                if (a.name > b.name) return 1;
-                return 0;
-              })
-              .map((temp) => {
-                return (
-                  <option value={temp.name} key={temp.id}>
-                    {temp.name}
-                  </option>
-                );
-              })}
-          </select>
+      <div className="formContainer">
+        <form onSubmit={(e) => handleSubmit(e)}>
+          <div className="values">
+            <label>
+              <strong>Breed Name:</strong>
+            </label>
+            <input
+              type="text"
+              value={input.name}
+              name="name"
+              onChange={(e) => handleChange(e)}
+            />
+            {errors.name && (
+              <p className="error">
+                <strong>{errors.name}</strong>
+              </p>
+            )}
+          </div>
+          <div className="values">
+            <label>
+              <strong>Height range (cm): </strong>
+            </label>
+            <input
+              type="text"
+              value={input.height}
+              name="height"
+              onChange={(e) => handleChange(e)}
+            />
+            {errors.height && (
+              <p className="error">
+                <strong>{errors.height}</strong>
+              </p>
+            )}
+          </div>
+          <div className="values">
+            <label>
+              <strong>Weight range (Kg): </strong>
+            </label>
+            <input
+              type="text"
+              value={input.weight}
+              name="weight"
+              onChange={(e) => handleChange(e)}
+            />
+            {errors.weight && (
+              <p className="error">
+                <strong>{errors.weight}</strong>
+              </p>
+            )}
+          </div>
+          <div className="values">
+            <label>
+              <strong>Life span (years): </strong>
+            </label>
+            <input
+              type="text"
+              value={input.life_span}
+              name="life_span"
+              onChange={(e) => handleChange(e)}
+            />
+            {errors.life_span && (
+              <p className="error">
+                <strong>{errors.life_span}</strong>
+              </p>
+            )}
+          </div>
+          <div className="values">
+            <label>
+              <strong>Image URL: </strong>
+            </label>
+            <input
+              type="url"
+              value={input.image}
+              name="image"
+              onChange={(e) => handleChange(e)}
+            />
+            {errors.image && (
+              <p className="error">
+                <strong>{errors.image}</strong>
+              </p>
+            )}
+          </div>
 
-          {input.temperaments.map((el) => {
-            return (
-              <ul className="allTemps" key={el}>
-                <li>
-                  <p className="temp">
-                    <strong>{el}</strong>
-                  </p>
-                  <button
-                    onClick={() => handleDeleteTemperament(el)}
-                    className="x"
-                  >
-                    X
-                  </button>
-                </li>
-              </ul>
-            );
-          })}
-        </div>
-        <button type="submit" className="boop">
-          <strong>Create Dog</strong>
-        </button>
-      </form>
+          <div>
+            <select onChange={(e) => handleSelect(e)}>
+              <option value="selected" hidden>
+                Temperaments
+              </option>
+              {allTemperaments
+                ?.sort(function (a, b) {
+                  if (a.name < b.name) return -1;
+                  if (a.name > b.name) return 1;
+                  return 0;
+                })
+                .map((temp) => {
+                  return (
+                    <option value={temp.name} key={temp.id}>
+                      {temp.name}
+                    </option>
+                  );
+                })}
+            </select>
+
+            {input.temperaments.map((el) => {
+              return (
+                <ul className="allTemps" key={el}>
+                  <li>
+                    <p className="temp">
+                      <strong>{el}</strong>
+                    </p>
+                    <button
+                      onClick={() => handleDeleteTemperament(el)}
+                      className="x"
+                    >
+                      X
+                    </button>
+                  </li>
+                </ul>
+              );
+            })}
+          </div>
+          <button type="submit" className="boop">
+            <strong>Create Dog</strong>
+          </button>
+        </form>
+      </div>
     </div>
   );
 }
